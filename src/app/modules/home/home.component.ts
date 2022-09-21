@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {JokePublisherService} from "../../service/joke-publisher.service";
+import {Joke} from "../../shared/model/joke";
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ export class HomeComponent implements OnInit {
   joke!: string;
   category!: string;
 
-  constructor() {
+  constructor(private jokePublisherService: JokePublisherService) {
     this.setInitialValues();
   }
 
@@ -18,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
+    this.jokePublisherService.publishJoke(new Joke(this.joke, this.category, "ADMIN"));
     this.setInitialValues();
   }
 

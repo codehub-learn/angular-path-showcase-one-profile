@@ -1,7 +1,24 @@
 <div class="container mw-100" id="generalContainer">
   <div class="row">
     <div class="col-12">
-      jokeslist component
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Joke</th>
+          <th scope="col">Category</th>
+          <th scope="col">By</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let joke of jokesToBeReviewedArray; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{joke.joke}}</td>
+          <td>{{joke.category}}</td>
+          <td>{{joke.by}}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
