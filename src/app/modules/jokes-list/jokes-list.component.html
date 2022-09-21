@@ -1,6 +1,48 @@
 <div class="container mw-100" id="generalContainer">
   <div class="row">
     <div class="col-12">
+    <h3>Jokes to reviewed</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Joke</th>
+          <th scope="col">Category</th>
+          <th scope="col">By</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let joke of jokesToBeReviewedArray; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{joke.joke}}</td>
+          <td>{{joke.category}}</td>
+          <td>{{joke.by}}</td>
+          <td>
+            <button type="button" (click)="denyJoke(i)" class="btn btn-danger btn-sm">Deny</button>
+            <button type="button" (click)="acceptJoke(i)" class="btn btn-success btn-sm" >Accept</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h3>Jokes Accepted</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
       <table class="table">
         <thead>
         <tr>
@@ -11,7 +53,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let joke of jokesToBeReviewedArray; let i = index">
+        <tr *ngFor="let joke of jokesAccepted; let i = index">
           <th scope="row">{{i + 1}}</th>
           <td>{{joke.joke}}</td>
           <td>{{joke.category}}</td>

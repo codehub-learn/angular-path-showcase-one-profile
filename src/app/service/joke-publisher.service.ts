@@ -7,15 +7,25 @@ import {Joke} from "../shared/model/joke";
 })
 export class JokePublisherService {
 
-  private jokePublisher = new ReplaySubject<Joke>();
+  private jokePublisher!: ReplaySubject<Joke>;
 
-  constructor() { }
+  constructor() {
+    this.setSubjectInitialValue();
+  }
 
   listenForJokes() {
-    return this.jokePublisher.asObservable()
+    return this.jokePublisher.asObservable();
   }
 
   publishJoke(joke: Joke){
     this.jokePublisher.next(joke);
+  }
+
+  resetPublisher(){
+    this.setSubjectInitialValue();
+  }
+
+  private setSubjectInitialValue(){
+    this.jokePublisher = new ReplaySubject<Joke>();
   }
 }
