@@ -2,6 +2,15 @@
 
 @import "~bootstrap/dist/css/bootstrap.css";
 
+#generalContainer {
+  width: 91%;
+  margin-top: 2.5%;
+  padding: 0;
+  overflow: hidden;
+  border-width: 1px !important;
+  text-align: center;
+}
+
 html {
   position: relative;
   min-height: 100%;
