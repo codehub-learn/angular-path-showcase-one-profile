@@ -1,7 +1,24 @@
 <div class="container mw-100" id="generalContainer">
   <div class="row">
     <div class="col-12">
-      home component
+    <h3>Submit your custom joke</h3>
     </div>
+  </div>
+  <div class="row">
+
+    <div class="col-12">
+      <form (ngSubmit)="onSubmit()">
+      <input type="text" [(ngModel)]="joke" name="joke">
+        <select [(ngModel)]="category" name="category">
+          <option value="Misc">Misc</option>
+          <option value="Programming">Programming</option>
+          <option value="Pun">Pun</option>
+          <option value="Spooky">Spooky</option>
+          <option value="Christmas">Christmas</option>
+        </select>
+        <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button>
+      </form>
+    </div>
+
   </div>
 </div>

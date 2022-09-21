@@ -7,9 +7,22 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  joke!: string;
+  category!: string;
+
+  constructor() {
+    this.setInitialValues();
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    this.setInitialValues();
+  }
+
+  private setInitialValues(){
+    this.joke = "";
+    this.category = "Misc";
+  }
 }
