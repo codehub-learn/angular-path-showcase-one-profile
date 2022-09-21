@@ -1,12 +1,1 @@
-html {
-  position: relative;
-  min-height: 100%;
-  padding-bottom:50px;
-}
 
-footer {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  width: 100%;
-}
